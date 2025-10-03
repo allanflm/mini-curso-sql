@@ -24,3 +24,21 @@ VALUES
 ('Coca-Cola Garrafa 2L', 11.99, 500, 37),
 ('Leite Moça Lata 395g', 9.99, 300, 38),
 ('Smart Speaker Echo Dot 6ª Geração', 349.00, 120, 39);
+
+SELECT id, nome FROM marcas WHERE id = 31;
+
+CREATE TABLE produtos_apple(
+    nome VARCHAR(150) NOT NULL,
+    estoque INTEGER DEFAULT 0
+);
+
+
+
+INSERT INTO produtos_apple
+SELECT nome, estoque FROM produtos WHERE id_marca = 33;
+
+SELECT * FROM produtos_apple;
+
+TRUNCATE TABLE produtos_apple; -- APAGAR REGISTROS
+
+DROP TABLE produtos_apple; -- APAGAR TABELA
